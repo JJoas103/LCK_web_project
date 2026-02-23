@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LCK 로그인</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="icon/LoL2.ico" type="image/x-icon">
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("image/login_bk.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+    }
+    h2 {
+        text-align: center;
+        color: black;
+    }
+    .container {
+        width: 300px;
+        margin: 50px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        color: black;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        background-color: #fff;
+        color: #000;
+    }
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+        color: black;
+    }
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>LCK Sign in</h2>
+        <form action="signin.php" method="post">
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email adress</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="이메일을 입력하세요..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="password">Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="password" name="pwd" placeholder="비밀번호를 입력하세요..">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Sign in">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

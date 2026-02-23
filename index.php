@@ -1,0 +1,265 @@
+<?php
+session_start(); // 세션 시작
+include_once('db.php');
+// 로그인 여부 확인
+$logged_in = isset($_SESSION['uname']);
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" href="icon/riot.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <title>LCK</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div id="lck-icon">
+            <img src="image/lck_icon.jpg" alt="LCK">
+        </div>
+        <div class="brand">
+          <a href="#hero">  
+            <h1>LCK</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul class="navbar">
+            <li><a href="#services" data-after="Service">teams</a></li>
+            <li><a href="#projects" data-after="Projects">history</a></li>
+            <li><a href="#about" data-after="About">movie</a></li>
+            <li><a href="#contact" data-after="Contact">Contact</a></li>
+            <?php if ($logged_in): ?>
+              <li><a href="profile.php"><?php echo htmlspecialchars($_SESSION['uname']); ?></a></li>
+              <li><a href="logout.php">logout</a></li>
+            <?php else: ?>
+              <li><a href="signin.html">login</a></li>
+              <li><a href="signup.html">회원가입</a></li>
+            <?php endif; ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>LCK, <span></span></h1>
+        <h1>찬란한 영광<span></span></h1>
+        <a href="#services" type="button" class="cta">start</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title"><strong>LCK 참가팀</strong></h1>
+        <p><strong>LCK(League of Legends Champions Korea)</strong> 는 세계 최고의 리그 오브 레전드 선수들이 한 무대에서 경쟁하는 무대입니다. 
+            10개 팀이 뜨거운 승리를 향해 치열한 혈투를 해가며, 전략과 실력의 극한을 보여주는 곳입니다.
+            LCK 참가팀들은 최고의 명예를 위해 끊임없이 노력하며, 팬들에게 감동과 열정을 선사합니다. 
+            이번 시즌에는 어떤 팀이 승리의 깃발을 휘날릴까요? 지금 바로 LCK에 시선을 집중하세요!</p>
+      </div>
+      <div class="service-bottom">
+        <div class="service-item">
+            <div class="icon" ><a href="LCK/geng.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+              <h2>Gen.G</h2>
+            <p>젠지는 2022년 설립된 신생 팀이지만, 짧은 기간 동안 놀라운 성장을 보여준 팀입니다. 2023년 LCK 스프링 시즌에서 아테나스를 꺾고 LCK 우승을 차지하며 리그 역사에 새로운 한 페이지를 새겼습니다.
+              </p>
+        </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/t1.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>T1</h2>
+            <p>10번의 LCK 우승과 4번의 월드 챔피언십 우승. 불사대마왕 FAKER의 존재와 그를 뒷받침하는 T1의 역사들. 과거의 영광에 안주하지 않고 끊임없이 변화와 도전을 이어가는팀 
+                </p>
+        </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/hle.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>Hanwha Life Esports</h2>
+            <p>2015년 영광의 구 락스를 계승한 팀으로, 강팀을 잡아먹는 팀! 끊임없는 도전과 성장을 보여주며 탄탄한 팬덤을 보유하고있는 한화생명 e스포츠를 만나보시죠!</p>
+        </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/dk.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>Dplus KIA</h2>
+            <p>2020년 서머 LCK최초 3연속 통합 우승을 이루어낸 그 팀! 쇼메이커를 주축으로 전성기를 호령했던 바로 그 팀입니다. 월즈 우승의 주역들은 떠나갔지만 
+              오직 쇼메이커만이 남아 Dplus(전 담원)을 이어나가고 있습니다.
+            </p>
+        </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/kt.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>kt Rolster</h2>
+            <p>중꺽마를 만들어낸 데프트와 월즈 우승주역 베릴 그리고 표식까지 탄탄한 라인업을 바탕으로 좋은 모습을 보여주는 팀입니다. 여름의 kt라는 말이 있듯이
+              이번 LCK 서머 굉장히 기대됩니다!
+            </p>
+          </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/kdf.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>KWANGDONG FREECS</h2>
+            <p>전 아프리카 프릭스를 계승한 팀으로, 아프리카 bj출신인 김대호(cvMax) 감독과 이번 서머에 참여하게된 원딜 최기명(Leaper)선수가 있는
+              팬층이 든든한 팀입니다! 동부리그의 왕으로 이번 서머도 굉장히 기대됩니다
+            </p>
+            </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/fox.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>BNK FearX</h2>
+            <p>스프링 시즌부터 샌드박스의 이름에서 피어엑스라는 이름으로 리브랜딩된 팀입니다. 그동안 화끈한 공격력과 호전적인 교전능력을 보여주는 팀으로 
+              이번 시즌역시 보는 맛이 넘치는 경기를 보여줄 수 있을까요?
+            </p>
+        </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/ns.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>Nongshim RedForce</h2>
+            <p>프랜차이즈 도입 이후 LCK리그의 최후의 승격팀입니다. 안정적인 원딜러 지우(Jiwoo)선수와 은퇴를 번복하고 새롭게 복귀한 구거(Guger)선수를 바탕으로 만들어진
+              바텀이 기대되는 팀입니다!
+            </p>
+        </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/drx.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>DRX</h2>
+            <p>T1, GenG, DK를 잇는 LCK의 네번째 월즈 우승팀입니다. 데프트선수의 이적 전 많은 감동을 불러온 그 팀입니다. 
+              이팀 역시 역사가 탄탄한 팀으로, 많은 팬덤을 보유하고있습니다.</p>
+            </div>
+        <div class="service-item">
+            <div class="icon"><a href="LCK/bro.html"><img src="https://img.icons8.com/?size=100&id=VQbSRhIVC089&format=png&color=000000" /></a></div>
+            <h2>OKSavingsBank BRION</h2>
+            <p>다른 팀에 비해 상대적 약체로 평가받지만, 특유의 한타능력과 끈끈한 팀워크, 바텀 라인전의 우세를 바탕으로한 운영으로 분투하는 모습을 보여주고있습니다.
+              모든 게임팀의 프런트 중 가장 돋보인다고 평가받으며 탄탄한 팬덤을 보여하고있습니다.
+            </p>
+            </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service Section -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title"><strong> LCK <span>history</span></strong></h1>
+      </div>
+      <div class="all-projects">
+        <div class="project-item">
+          <div class="project-info">
+            <h1><strong>LoL The Champions</strong></h1>
+            <h2>리그오브레전드 지역리그의 시작 (2012~2014)</h2>
+            <p>OGN에서 2012년부터 개최한 <strong>세계 최초의리그오브레전드 지역 리그</strong>입니다. 토너먼트 방식을 채택하여 
+               리그의 첫 시즌인 Azubu the Champions Spring 2012를 시작으로, 월드챔피언십(이하 롤드컵)이 열리는 가을을 제외하고,
+               1년에 총 3번 대회가 열렸습니다. OGN이라는 TV방송국 특성상 경기 수가 매우 적었고 그만큼 선수들의 부담도 컷지만, 
+               당시 타 리그 경기 수준이 높아 다른 해외리그를 보는 해외 시청자들의 만족이 이어졌습니다.</p>
+          </div>
+          <div class="project-img">
+            <img src="image/leguee1.jpg" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><strong>LoL Champions KOREA</strong></h1>
+            <h2>리그 체제 전환 (2015~2018)</h2>
+            <p>한국e스포츠협회(KeSPA)에서 대회명을 <strong>리그오브레전드 챔피언스 코리아(LCK)</strong>로 변경, 
+              기존 토너먼트에서 리그 체제로 변경하였습니다. 또한 2부리그인 <strong>리그오브레전드 챌린저스코리아(CK)</strong>를 개최하고 LCK와 CK간 승강전도 도입되었습니다.</p>
+          </div>
+          <div class="project-img">
+            <img src="image/leguee2.jpg" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><strong>LoL Champions KOREA from RIOT GAMES</strong></h1>
+            <h2>라이엇 코리아 주최 (2019~2020)</h2>
+            <p>2019 스프링 시즌부터 라이엇 코리아가 LCK를 직접 주최하게 되었습니다. 라이엇게임즈 소유 경기장인 LOL PARK에서 경기가 열리고, 
+              OGN의 중계는 사라졌지만, 롤파크의 공식 중계진으로 계승하였습니다. LCK의 황금기를 맡았던 OGN을 이어 좋은 중계 퀄리티를 보여주고
+              센스넘치는 유튜브영상도 많이 만들고 있어 현재도 팬들의 극찬을 받고있습니다.</p>
+          </div>
+          <div class="project-img">
+            <img src="image/leguee3.jpg" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><strong>The future of LCK</strong></h1>
+            <h2>프랜차이즈 시스템 도입 (2021~ )</h2>
+            <p>2021 시즌부터 프랜차이즈 시스템을 도입했습니다. 승강전이 폐지되고 모든 스폰서 팀의 2군을 의무 도입, 1군 선수의 최저 연봉을 보장하는 등
+              기업과 팀을 연결하여 강등이 없기 때문에 안정적인 팀 운영과 장기적인 투자 유도하여 리그의 질 향상을 기대할 수 있게 되었습니다. 
+              한국에서 진행중인 KBO리그에 도입되어있는 연고지 시스템과 비슷합니다.</p>
+          </div>
+          <div class="project-img">
+            <img src="image/leguee4.jpg" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><strong>Hall of legends</strong></h1>
+            <h2>최초의 전설 FAKER</h2>
+            <p>Faker 선수는 리그 오브 레전드 역사에서 단순히 최다 우승 선수를 넘어 e스포츠의 얼굴이 되었습니다. 승리와 시험, 의지와 영광으로 가득한 그의 여정은 수백만 명의 팬과 동료 선수들의 가슴을 울렸습니다.</p>
+          </div>
+          <div class="project-img">
+            <img src="image/faker.PNG" alt="img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Start Movie Section-->
+   <section id="about">
+    <div id="hero">
+      <div class="hero container">
+        <div>
+          <h1>LCK 하이라이트</h1>
+          <a href="madmovie/hilit.html" type="button" class="cta">감상하기</a>
+        </div>
+      </div>
+     </section>
+   </section>
+   <!-- End Movie Section-->
+  <!-- Start map section-->
+  <div class="map" id="contact">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2151.599152230365!2d126.97602939239!3d37.572037643317636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca33003172e9f%3A0x921737779afed375!2z66Gk7YyM7YGs!5e0!3m2!1sko!2skr!4v1718472419086!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  <!-- End map section-->
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>L</span>eague <span>o</span>f <span>L</span>egends KOREA</h1>
+      </div>
+      <h2>from Riot</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://www.facebook.com/officiallck" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.instagram.com/lckofficial/" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://twitter.com/LCK" target="_blank"><img src="https://img.icons8.com/?size=100&id=eeQY_dRSUIMV&format=png&color=000000" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://youtube.com/@lck?si=K0ddg6o_gGcbfnp1" target="_blank"><img src="https://img.icons8.com/?size=100&id=109464&format=png&color=000000" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2020 Arfan. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+</html>
+        
